@@ -1,5 +1,6 @@
 # Fitness Footwear E-commerce Website
-![Fitness Footwear Website](shopifyecommercesc.png) 
+![Fitness Footwear Website](https://i.ibb.co/pPBvj7b/shopifyecommercesc.png)
+
 ## Introduction
 This repository contains the source code for a fitness footwear e-commerce website developed using Shopify's template language, enhanced with custom CSS, HTML, and JavaScript functionalities. The project showcases an online storefront tailored for athletic shoes, highlighting product collections, detailed product descriptions, and an intuitive shopping cart and checkout process.
 
