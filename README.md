@@ -1,5 +1,5 @@
 # Fitness Footwear E-commerce Website
-
+![Fitness Footwear Website](shopifyecommercesc.png) 
 ## Introduction
 This repository contains the source code for a fitness footwear e-commerce website developed using Shopify's template language, enhanced with custom CSS, HTML, and JavaScript functionalities. The project showcases an online storefront tailored for athletic shoes, highlighting product collections, detailed product descriptions, and an intuitive shopping cart and checkout process.
 
@@ -24,6 +24,7 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/your-username/Fitness-Footwear-Shopify.git
 cd Fitness-Footwear-Shopify
+```
 
 ## Live Demo
 You can view the live demo of the website here. The website is protected and requires the following credentials for access:
