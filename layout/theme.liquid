@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <style>
+
+      .body {
+        font-family: "Rubik"
+        , sans-serif;
+        padding: 0
+        , 0;
+      }
+      .rubik {
+        font-family: "Rubik"
+        , sans-serif;
+        font-optical-sizing: auto;
+
+      }
+      .veryTop {
+        display: flex;
+        width: 100%;
+        height: 20px;
+        background-color: #0182EB;
+        text-align: center;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        align-items: center;
+        justify-content: center;
+        font-family: "Rubik"
+        , sans-serif;
+        color: #09111D;
+        font-size: 16px;
+
+
+      }
+
+
+      /*
+
+   #banner { 
+   display: flex; 
+   align-items: center; 
+   justify-content: space-between; 
+   background-color: #09111D; 
+   height: 90px; 
+   padding: 0 20px; 
+   width: 100%; 
+   box-sizing: border-box; 
+   } 
+*/
+
+      #banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #09111D;
+        height: 90px;
+        padding: 0 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        background-color: #09111D;
+        color: white;
+        padding: 12px 0;
+
+
+      }
+
+      .footer {
+        width: 100%;
+        height: 300px;
+        background-color: green;
+        margin-top: 30px;
+      }
+
+      .footer-top {
+        display: flex;
+        width: 100%;
+        height: 150px;
+        background-color: #F2F5F9;
+        align-items: center;
+        justify-content: center;
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* Align items at the start of the flex container */
+        padding: 0 20px;
+        height: 150px;
+        background-color: #09111D;
+        color: white;
+      }
+
+      .footer-section {
+        display: flex;
+        flex-direction: column;
+        /* Stack the h2 and ul vertically */
+        width: 20%;
+        /* Adjust based on how much space you want each section to take */
+        padding-top: 15px;
+      }
+
+      .footer-section h2 {
+        margin-bottom: 10px;
+        /* Add space between the h2 and ul */
+        color: #f2f5f9;
+        font-size: 14px;
+      }
+      .footer-section-slogan {
+        display: inline-block;
+        width: 35%;
+        padding-left: 15px;
+        padding-right: 15px;
+
+
+      }
+
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+      }
+
+      .footer-section ul li a {
+        color: #cccccc;
+        text-decoration: none;
+        line-height: 1.5;
+        display: block;
+      }
+
+
+      /*
+
+   .search-container { 
+   display: flex; 
+   align-items: center; 
+   position: relative; 
+   flex-grow: 1; 
+   } 
+*/
+      .search-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+
+      .menu-item {
+        position: relative;
+        /* Needed for absolute positioning of dropdown */
+        margin: 0 20px;
+        transition: transform 0.3s ease;
+        z-index: 2000;
+        justify-content: flex-start;
+      }
+
+      .margin-menu-items,
+      .margin-menu-items-about {
+        cursor: pointer;
+        font-size: 14px;
+        color: white;
+        /* Ensures text color is consistent */
+        padding: 24px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      .menu-item:hover {
+        transform: translateY(-1px);
+        /* Moves the item up slightly on hover */
+      }
+
+
+      /* Consistent hover effect for all menu items */
+      .margin-menu-items:hover,
+      .margin-menu-items-about:hover {
+        background-color: #007BFF;
+        /* Example hover color */
+        color: white;
+        /* Ensures text color on hover is white */
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        color: black;
+        z-index: 2001;
+        padding: 5px 0;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .search-box {
+        display: none;
+        width: 200px;
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateX(100%) translateY(-50%);
+      }
+
+      .search-icon-btn {
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        margin-right: 10px;
+      }
+
+      .search-box.active {
+        display: block;
+
+      }
+      .search-icon-btn-img {
+
+        display: block;
+        /* Ensures the img element doesn't have extra space around it */
+      }
+      .website-logo-img {
+        flex-grow: 0;
+        /* Prevents the logo from stretching */
+      }
+
+      .logo-and-search {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        /* Allows this container to take up available space */
+        justify-content: flex-start;
+        /* Aligns children to the start of the container */
+      }
+
+      .menu,
+      .footer {
+        width: 100%;
+        /* Ensures these elements do not exceed the viewport width */
+      }
+      .cart-icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
+
+      .cart-icon-btn-img {
+
+        display: block;
+        /* Ensures the img element doesn't have extra space around it */
+      }
+      .website-logo-img {
+        width: 40px;
+        /* Set the width of the icon */
+        height: 40px;
+        /* Set the height of the icon */
+        display: block;
+        /* Ensures the img element doesn't have extra space around it */
+      }
+      .circle {
+        width: 30px;
+        /* Width of the circle */
+        height: 30px;
+        /* Height must be the same as the width */
+        border-radius: 50%;
+        /* This percentage will create a full circle */
+        background-color: #007BFF;
+        /* Background color of the circle */
+        display: flex;
+        /* Ensures content inside is center-aligned (optional) */
+        align-items: center;
+        /* Vertical alignment (optional) */
+        justify-content: center;
+        /* Horizontal alignment (optional) */
+        overflow: hidden;
+        /* Ensures no content spills outside the circle (optional) */
+        border: 2px solid #09111D;
+        /* Optional border for the circle */
+        margin-left: 75%;
+
+      }
+      .contact-footer {
+        text-align: center;
+      }
+
+
+      .arrow-image {}
+
+    .circle-link {
+      text-decoration: none;
+      /* Removes underline from the link */
+      color: inherit;
+      /* Inherits text color from parent elements */
+    }
+
+
+    /*
+
+   .feedback-modal { 
+   position: fixed; 
+   z-index: 1000; 
+   left: 0; 
+   top: 0; 
+   width: 100%; 
+   height: 100%; 
+   overflow: auto; 
+   background-color: rgba(0, 0, 0, 0.4); 
+   display: flex; 
+   justify-content: center; 
+   align-items: center; 
+   } 
+
+   .feedback-modal-content { 
+   background-color: #fefefe; 
+   margin: auto; 
+   padding: 20px; 
+   border: 1px solid #888; 
+   width: 80%; 
+   max-width: 500px; 
+   } 
+
+   .feedback-rating label { 
+   font-size: 2rem; 
+   cursor: pointer; 
+   } 
+
+   textarea { 
+   width: 100%; 
+   margin-top: 10px; 
+   } 
+*/
+
+    .feedback-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      /* Darker background */
+      z-index: 1000;
+      /* High z-index to be on top of other content */
+
+
+    }
+
+    .feedback-modal-content {
+      position: relative;
+      /* Relative for positioning of children absolutely */
+      background-color: #fefefe;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      max-width: 500px;
+      margin: auto;
+
+
+    }
+
+    .feedback-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #aaa;
+      /* Light grey for default state */
+    }
+    .modal-footer-btns {
+      text-align: center;
+    }
+    .feedback-close-btn:hover {
+      color: black;
+      /* Change color on hover for better visibility */
+    }
+    .add-to-cart-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #aaa;
+      /* Light grey for default state */
+    }
+    .add-to-cart-close-btn:hover {
+      color: black;
+    }
+    .feedback-page-title {
+      text-align: center;
+      padding-bottom: 10px;
+      width: 100%;
+      color: #001E63;
+      font-weight: bold;
+
+    }
+    .feedback-page-content {
+      text-align: center;
+      padding-bottom: 10px;
+      width: 100%;
+      color: #001E63;
+    }
+
+    .feedback-page-rate-box {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-direction: row-reverse;
+    }
+
+    .feedback-page-star {
+      cursor: pointer;
+      font-size: 2rem;
+      display: inline-block;
+      /* Ensures that labels are inline */
+      color: #ccc;
+      /* Default color */
+    }
+
+    .feedback-page-star::before {
+      content: "★";
+      /* Unicode star */
+      font-size: 2rem;
+      color: inherit;
+      /* Inherits color from .feedback-page-star */
+    }
+    .feedback-page-rate-box input[type="radio"]:checked + label {
+      color: #001E63;
+      font-family: "Rubik"
+      , sans-serif;
+      justify-content: center;
+      /* Color for selected state */
+    }
+    .feedback-page-star:hover::before,
+    .feedback-page-star:hover ~ .feedback-page-star::before,
+    .feedback-page-star:checked + .feedback-page-star::before,
+    .feedback-page-star:checked ~ .feedback-page-star::before {
+      color: #001E63;
+      /* Blue color for selected and hover states */
+    }
+
+    .feedback-page-textarea {
+      margin-left: 8%;
+
+      margin-bottom: 4px;
+
+
+      width: 400px;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      font-family: "Rubik"
+      , sans-serif;
+    }
+
+    .feedback-page-submit-btn {
+      padding: 3px 1rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: "Rubik"
+      , sans-serif;
+    }
+
+
+    .feedback-page-submit-btn:hover {
+      background-color: #0056b3;
+      /* Darker blue on hover */
+    }
+    .modal-footer {
+      padding: 3px 1rem;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: auto;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: "Rubik"
+      , sans-serif;
+    }
+    .modal-footer:hover {
+      background-color: #0056b3;
+      /* Darker blue on hover */
+    }
+    /* Hide the actual radio buttons to only show stars */
+    .feedback-page-rate-box input[type="radio"] {
+      display: none;
+    }
+
+    .feedback-page-rate-box label:hover,
+    .feedback-page-rate-box label:hover ~ label,
+    .feedback-page-rate-box input[type="radio"]:checked + label,
+    .feedback-page-rate-box input[type="radio"]:checked ~ label {
+      color: #001E63;
+      /* Ensures hover and checked states are visible */
+    }
+    .modal {
+      display: flex;
+      /* flex instead of none */
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      /* High enough to be on top */
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    </style>
+    {{ content_for_header }}
+
+  </head>
+  <body>
+    <div class="veryTop">
+      <p>Free shipping on orders $100+</p>
+
+    </div>
+    <div id="banner">
+      <div class="search-container">
+        <form action="/search" method="get">
+          <button
+            type="button"
+            class="search-icon-btn"
+            onclick="toggleSearch(event)">
+            <img
+              src="{{ 'search.png' | asset_url }}"
+              alt="search icon"
+              class="search-icon-btn-img"
+              width="25px"
+              height="25px">
+          </button>
+          <input
+            type="text"
+            name="q"
+            id="search-box"
+            class="search-box"
+            placeholder="Search..."
+            aria-label="Search"
+            style="display: none;">
+            <!-- Submit button, can be hidden since the search icon is used to toggle -->
+          <input type="submit" style="display: none;">
+        </form>
+
+      </div>
+      <a href="/index">
+        <img
+          src="{{ 'logo.png' | asset_url }}"
+          alt="website logo"
+          class="website-logo-img"
+          width="70px"
+          height="50px">
+      </a>
+      <button class="cart-icon-btn" onclick="window.location.href='/cart'">
+        <img
+          src="{{ 'cart-icon.png' | asset_url }}"
+          alt="Cart"
+          class="cart-icon-btn-img"
+          width="29px"
+          height="29px">
+        <span id="cart-count" style="position: absolute; top: 65px; right: 30px;  font-size: large; font-weight: bold; color: rgb(7, 7, 7); border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px;">0</span>
+      </button>
+
+  </div>
+
+
+    {% comment %} {% if template.name != 'cart' and template.name != 'page.contact' and template.name != 'page.careers' and template.name != 'page.help' and template.name != 'page.our-business' and template.name != 'page.our-products' %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="menu">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <!-- Dynamic menu integration -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {% for linklist in linklists %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              {% if linklist.handle == 'training' %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="menu-item">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p class="margin-menu-items">{{ linklist.title }}</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="dropdown-content">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="/pages/womens-training">Women's Training</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="/pages/mens-training">Men's Training</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              {% endif %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              {% if linklist.handle == 'running' %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="menu-item">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p class="margin-menu-items">{{ linklist.title }}</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="dropdown-content">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="/pages/mens-running">Men's Running</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="/pages/womens-running">Women's Running</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              {% endif %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {% endfor %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {% endif %} {% endcomment %}
+    {% assign hide_menu_on_pages = "contact,careers,help,our-buisness,our-products" %}
+    <!-- List of page handles to hide menu -->
+
+    {% if template.name == 'cart' or hide_menu_on_pages contains page.handle %}
+    <!-- This block remains empty as we do not display the menu when conditions are met -->
+    {% else %}
+      <div class="menu">
+        <!-- Dynamic menu integration -->
+        {% for linklist in linklists %}
+          {% if linklist.handle == 'training' %}
+            <div class="menu-item">
+              <p class="margin-menu-items">{{ linklist.title }}</p>
+              <div class="dropdown-content">
+                <a href="/pages/womens-training">Women's Training</a>
+                <a href="/pages/mens-training">Men's Training</a>
+              </div>
+            </div>
+          {% endif %}
+          {% if linklist.handle == 'running' %}
+            <div class="menu-item">
+              <p class="margin-menu-items">{{ linklist.title }}</p>
+              <div class="dropdown-content">
+                <a href="/pages/mens-running">Men's Running</a>
+                <a href="/pages/womens-running">Women's Running</a>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    {{ content_for_layout }}
+    <div class="footer">
+      <div class="footer-top">
+        <h1 class="contact-footer">Contact us</h1>
+        <a href="/pages/contact" class="circle-link">
+          <div class="circle">
+            <img
+              src="{{ 'arrow.png' | asset_url }}"
+              alt="arrow icon"
+              class="arrow-image"
+              width="28px"
+              height="28px" />
+          </div>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-section-slogan">
+          <h1>STAY FIT NOT STILL</h1>
+        </div>
+        <div class="footer-section">
+          <h2>HELP</h2>
+          <ul>
+            <li><a href="/pages/help">FAQ</a></li>
+            <li><a href="/pages/help">Shipping</a></li>
+            <li><a href="/pages/help">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h2>SHOP</h2>
+          <ul>
+            <li><a href="/pages/our-products">Products</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h2>ABOUT</h2>
+          <ul>
+            <li><a href="/pages/our-buisness">Our Business</a></li>
+            <li><a href="/pages/careers">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div
+      id="feedback-modal"
+      class="feedback-modal"
+      style="display: none;">
+      <div class="feedback-modal-content">
+        <span class="feedback-close-btn">&times;</span>
+        <div class="feedback-page-title">Rate your experience</div>
+        <div class="feedback-page-content">We highly value your feedback! Kindly take a moment to rate your experience and provide us with your valuable feedback.</div>
+        <div class="feedback-page-rate-box">
+          {% for i in (0..4) %}
+            <input
+              type="radio"
+              name="feedback-page-star"
+              id="feedback-page-star{{ i }}">
+            <label class="feedback-page-star" for="feedback-page-star{{ i }}"></label>
+          {% endfor %}
+        </div>
+
+        <textarea
+          class="feedback-page-textarea"
+          cols="30"
+          rows="6"
+          placeholder="Tell us about your experience!"
+          required></textarea>
+        <div class="feedback-page-submit-btn">Send</div>
+      </div>
+    </div>
+    <div
+      id="add-to-cart-modal"
+      class="modal"
+      style="display: none;">
+      <div class="modal-content">
+        <span class="add-to-cart-close-btn">&times;</span>
+        <div class="modal-header">
+          <h2>1 Item Added to Cart</h2>
+        </div>
+        <div class="modal-body">
+          <img
+            src=""
+            alt="Product Image"
+            id="modal-product-image"
+            width="80px"
+            height="80px"
+            object-fit="cover">
+          <p id="modal-product-title">Product Title</p>
+          <p id="modal-product-size">Size: Product Size</p>
+        </div>
+        <div class="modal-footer-btns">
+          <button class="modal-footer" onclick="window.location.href='/cart'">Continue to Cart</button>
+          <button class="modal-footer" onclick="document.getElementById('add-to-cart-modal').style.display='none'">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+    <script src="{{ 'main.js' | asset_url }}" defer></script>
+    <script>
+      function openFeedbackModal() {
+          document.getElementById('feedback-modal').style.display = 'flex';
+      }
+      
+      function closeFeedbackModal() {
+          document.getElementById('feedback-modal').style.display = 'none';
+      }
+      function openAddToCartModal() {
+        document.getElementById('add-to-cart-modal').style.display = 'flex';
+      }
+      
+      function closeAddToCartModal(){
+        document.getElementById('add-to-cart-modal').style.display = 'none';
+      
+      }
+          
+      // Optional: Close the modal if the user clicks anywhere outside of the modal content
+      window.onclick = function(event) {
+          var modal = document.getElementById('add-to-cart-modal');
+          if (event.target == modal) {
+        closeFeedbackModal();
+          }
+      }
+      window.onclick = function(event) {
+          var modal = document.getElementById('feedback-modal');
+          if (event.target == modal) {
+        closeFeedbackModal();
+          }
+      }
+    </script>
+
+  </body>
+</html>

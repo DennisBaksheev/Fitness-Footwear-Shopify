@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+  </head>
+  <body>
+    <div class="page-title">
+      <h1>Men's Training Shoes Collection</h1>
+    </div>
+
+    <!-- Products -->
+    <div class="item-container">
+      {% assign product_handles = 'adidas-mens-adipower-iii-training-shoes, new-balance-mens-mx-517-training-shoes, nike-mens-free-metcon-4-training-shoes-gym-cushioned, nike-mens-metcon-9-training-shoes, nike-mens-react-metcon-turbo-2-training-shoes-cushioned-lightweight, reebok-mens-nano-x3-training-shoes, under-armour-mens-project-rock-5-training-shoes, nike-mens-romaleus-4-training-shoes-casual' | split: ', ' %}
+
+      {% for handle in product_handles %}
+        {% assign product = all_products[handle] %}
+          <div class="item">
+          <h3 class="product-title">{{ product.title }}</h3>
+          <img
+            src="{{ product.featured_image | img_url: 'large' }}"
+            alt="{{ product.title }}"
+            class="product-image"
+            width="200px"
+            height="170px" />
+          <p class="product-price">{{ product.price | money_with_currency }}</p>
+          <select class="product-size" id="size-select-{{ product.id }}">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }}</option>
+            {% endfor %}
+          </select>
+          {% comment %} <button class="add-to-cart-btn" onclick="addToCart({{ product.id }})">Add to Cart</button> {% endcomment %}
+          <button
+            class="add-to-cart-btn"
+            data-product-id="{{ product.id }}"
+            data-product-handle="{{ product.handle }}"
+            onclick="addToCart('{{ product.id }}'); openAddToCartModal();">
+            Add to Cart
+          </button>
+        </div>
+
+      {% endfor %}
+    </div>
+    <div id="feedbackButtonContainer" style="position: fixed; right: 0; bottom: 20%; z-index: 999;">
+      <button onclick="openFeedbackModal()" style="transform: rotate(90deg); transform-origin: right top; background-color: #007BFF; color: white; border: none; cursor: pointer; padding: 10px 20px; border-radius: 5px; text-align: center; display: block;">
+        Feedback
+      </button>
+    </div>
+  </body>
+</html>

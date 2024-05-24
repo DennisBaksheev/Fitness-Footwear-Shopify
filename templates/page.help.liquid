@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <div class="text-box">
+        <h1 class="heading-primary">
+          <span class="heading-primary-main">Help</span>
+          <span class="heading-primary-sub">We’re here to help.</span>
+        </h1>
+      </div>
+    </div>
+    <div class="accordion">
+      <details>
+        <summary>Orders</summary>
+        <p>How can I track my order?</p>
+        <p>What are my payment options?</p>
+      </details>
+      <details>
+        <summary>Returns</summary>
+        <p>How can I start an online return?</p>
+        <p>What's your return policy?</p>
+        <p>Can you tell me more about receipts and refunds?</p>
+        <p>Can you help me with shoes that arrived damaged?</p>
+      </details>
+      <details>
+        <summary>Services and Payment Plans</summary>
+        <p>How can I buy online and pick up in store?</p>
+        <p>What virtual shopping options do you have?</p>
+        <p>Where's my closest store?</p>
+        <p>What payment plans do you offer?</p>
+      </details>
+      <details>
+        <summary>Sizing</summary>
+        <p>Where can I go for support with sizing questions?</p>
+      </details>
+      <details>
+        <summary>Shipping Policy</summary>
+        <p>Fees and Timing</p>
+        <p>Shipping Location</p>
+        <p>International Shipping</p>
+        <p>International Shopping</p>
+      </details>
+      <details>
+        <summary>Support Centre Information</summary>
+        <p>The Guest Education Centre (GEC) is our contact centre. Reach out to us by Live Chat, Apple Messages, phone or email.</p>
+        <p>Our Store Support Centre (SSC) is home to everyone from business operations to community relations. Contact the SSC at: 1002 Eglinton Ave, Toronto, ON, Canada, V5J 1C7</p>
+        <p>Phone number: 1.416.732.6124</p>
+      </details>
+
+    </div>
+    <div class="contact-info">
+      <div class="contact-section">
+        <img
+          src="{{ 'chat.jpg' | asset_url }}"
+          alt="woman speaking on a live chat"
+          width="550px"
+          height="350px"
+          object-fit="cover" />
+        <h2>Chat with us</h2>
+        <p>Our friendly Virtual Assistant is available for fast support, 24/7. If you need help from a human, they’ll direct you to one during hours of operation.</p>
+        <p>Hours of operation:</p>
+        <ul>
+          <li>5am – 9pm PT on weekdays</li>
+          <li>6am – 6pm PT on weekends</li>
+        </ul>
+        <p>
+          <strong>Let's Chat</strong>
+        </p>
+      </div>
+
+      <div class="contact-section">
+        <img
+          src="{{ 'help.jpg' | asset_url }}"
+          alt="man speaking on the phone"
+          width="550px"
+          height="350px"
+          object-fit="cover" />
+        <h2>Shop with a Product Expert</h2>
+        <p>Product Experts can help with placing an order, product recommendations, and personal shopping. Connect with one today.</p>
+        <p>Hours of operation:</p>
+        <ul>
+          <li>6am – 6pm PT on weekdays</li>
+          <li>6am – 4pm PT on weekends</li>
+        </ul>
+        <p>
+          <strong>Connect With Us</strong>
+        </p>
+      </div>
+    </div>
+    <script src="{{ 'main.js' | asset_url }}" defer></script>
+  </body>
+</html>

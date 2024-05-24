@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+
+
+      .hero-banner {
+        background-image: url('{{ 'hero-banner.jpg' | asset_url }}');
+        background-size: cover;
+        // Adjusts width to 100% and height automatically
+        background-position: center center;
+        // Keeps the image centered
+        width: 100%;
+        min-height: 400px;
+        // Minimum height to ensure visibility of important elements
+        height: 50vh;
+        // Adjusts height relative to the viewport height
+        position: relative;
+      }
+
+      @media (max-width: 768px) {
+        .hero-banner {
+          min-height: 200px;
+          // Slightly less height for medium screens
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-banner {
+          min-height: 150px;
+          // Even smaller height for small screens
+        }
+      }
+
+      @media (min-width: 1024px) {
+        /* Adjust breakpoint as needed for larger screens */
+        .hero-banner {
+          min-height: 75vh;
+
+        }
+      }
+
+
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <div class="hero-banner"></div>
+    <div class="slogan">
+      <p1>Meet the internet's top choice for fitness footwear.</p1>
+    </div>
+    <div class="item-container">
+      {% for product in collections['new-collection'].products %}
+        <div class="item">
+          <h3 class="product-title">{{ product.title }}</h3>
+          <img
+            src="{{ product.featured_image | img_url: 'large' }}"
+            alt="{{ product.title }}"
+            class="product-image"
+            width="200px"
+            height="170px" />
+          <p class="product-price">{{ product.price | money_with_currency }}</p>
+          <select class="product-size" id="size-select-{{ product.id }}">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }}</option>
+            {% endfor %}
+          </select>
+          <button
+            class="add-to-cart-btn"
+            data-product-id="{{ product.id }}"
+            data-product-handle="{{ product.handle }}"
+            onclick="addToCart('{{ product.id }}'); openAddToCartModal();">
+            Add to Cart
+          </button>
+
+
+        </div>
+      {% endfor %}
+    </div>
+
+    <div id="feedbackButtonContainer" style="position: fixed; right: 0; bottom: 20%; z-index: 999;">
+      <button onclick="openFeedbackModal()" style="transform: rotate(90deg); transform-origin: right top; background-color: #007BFF; color: white; border: none; cursor: pointer; padding: 10px 20px; border-radius: 5px; text-align: center; display: block;">
+        Feedback
+      </button>
+    </div>
+
+
+  </body>
+
+
+</html>

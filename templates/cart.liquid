@@ -1,0 +1,38 @@
+{% layout 'theme' %}
+<head>
+  <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+</head>
+
+<body>
+  <div id="cart-content" class="new-cart-container">
+    {% if cart.items.size > 0 %}
+      {% for item in cart.items %}
+        <div class="new-cart-item" data-line="{{ forloop.index }}">
+          <img
+            src="{{ item.image | img_url: 'small' }}"
+            alt="{{ item.title }}"
+            class="new-cart-item-img"
+            width="80px"
+            height="80px"
+            object-fit="cover">
+          <div class="new-cart-details">
+            <p class="new-cart-title">{{ item.title }} - Size: {{ item.variant.options[1] }}</p>
+            <p class="new-cart-price">{{ item.quantity }} x {{ item.price | money }}</p>
+            <button class="new-cart-remove-btn" onclick="removeFromCart({{ forloop.index0 }})">Remove</button>
+          </div>
+        </div>
+      {% endfor %}
+      <div class="new-cart-total">
+        <strong>Total:</strong>
+        {{ cart.total_price | money }}
+      </div>
+      <div class="checkout-flex">
+        <button class="checkout-btn" onclick="window.location.href='/checkout'">Checkout</button>
+      </div>
+    {% else %}
+      <p class="new-empty-cart-message">Your cart is empty!</p>
+    {% endif %}
+
+  </div>
+  <script src="{{ 'main.js' | asset_url }}" defer></script>
+</body>

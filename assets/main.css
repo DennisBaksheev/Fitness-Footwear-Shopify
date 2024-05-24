@@ -1,0 +1,683 @@
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: "Rubik", sans-serif;
+}
+
+.rubik {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    
+  }
+  
+
+.slogan {
+    
+
+    width: 100%;
+    height: 23px;
+    background-color: white;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 38px;
+    font-size: 18px;
+    color:#001E63;
+    font-weight: bold;
+    padding-bottom: 0px;
+
+}
+.slogan-two {
+    
+
+    width: 100%;
+    height: 19px;
+    background-color: white;
+    
+    padding-top: 9px;
+    padding-bottom: 15px;
+    
+    font-size: 18px;
+    color:#001E63;
+    font-weight: bold;
+    margin-left: 88%;
+    
+    
+    
+    
+
+}
+
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Changed from space-between to flex-start */
+    align-items:self-start;
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Padding around the entire container */
+}
+
+
+
+
+.item {
+    width: 23%; /* Set to take up 23% of the item-container width, fitting 4 items per row */
+    min-width: 235px; /* Ensures items do not become too small on narrower screens */
+    max-width: 235px; /* Ensures consistency in item width */
+    height: 400px; /* Sets a fixed height for each item */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px); /* Slight raise effect on hover */
+}
+
+.product-image {
+    width: 200px; /* Fixed width */
+    height: 170px; /* Fixed height */
+   
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.product-title {
+    height: 60px; /* Fixed height */
+    width: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    width: 100%; /* Ensures the title width matches item width */
+    margin-bottom: 5px;
+}
+
+.product-price {
+    height: 30px; /* Fixed height */
+    font-size: 14px;
+    color: black;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.add-to-cart-btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    font-family: "Rubik", sans-serif;
+}
+
+.headings {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.mini-text {
+
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+
+.buttons {
+    display: flex;
+    font-family: "Rubik", sans-serif;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+
+    
+    
+    
+    
+
+
+}
+
+.mini-button {
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    background-color: #001E63;
+    width: 110px;
+    height: 40px;
+}
+
+
+.product-size {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 11px;
+}
+
+
+.page-title {
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    color:#001E63;
+    font-size: large;
+
+    padding-top: 2px;
+
+}
+
+.page-title-contact {
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    color: #001E63;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+buttons {
+    display: flex;
+    font-family: "Rubik", sans-serif;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+
+
+.accordion summary {
+    font-size: 20px;
+    color: #001E63;
+    padding: 10px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    outline: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion {
+    width: 80%;
+    margin: 2rem auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+
+
+.accordion details {
+    background-color: transparent;
+    border: none;
+}
+
+.accordion p {
+    color: #001E63;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.page-title-actions {
+    text-align: left;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    color:#001E63;
+    padding-top: 20px;
+    padding-left: 65px;
+
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    align-items: stretch; /* Changed from center to stretch */
+    margin: 20px auto;
+}
+  
+.checkout-flex {
+    text-align: center;
+}
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will help distribute the space evenly */
+    max-width: 500px;
+    min-height: 450px; /* Example fixed minimum height to ensure alignment */
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    font-family: "Rubik", sans-serif;
+    color:#001E63;
+}
+.contact-section img {
+    width: 100%; /* ensures the image takes the full width */
+    height: 350px; /* keeps image height consistent */
+    object-fit: cover; /* ensures the image covers the area without distortion */
+}
+
+
+/* Additional CSS to ensure text does not overflow and is aligned */
+.contact-section h2, .contact-section p, .contact-section ul {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Ensure UL has consistent margin and padding */
+.contact-section ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+.new-cart-container {
+    max-width: 100%; /* Limits the width of the cart container */
+    margin: auto;
+    padding: 20px;
+    background-color: #F7F9FC;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+   
+    
+}
+.checkout-btn {
+    background-color: #007BFF; /* Blue background */
+    color: white;              /* White text */
+    padding: 10px 20px;        /* Padding for size */
+    border-radius: 5px;        /* Rounded corners */
+    border: none;              /* No border */
+    box-shadow: none;          /* No shadow */
+    cursor: pointer;           /* Pointer cursor on hover */
+    text-decoration: none;     /* No underline */
+    display: inline-block;     /* Allows padding and margins */
+    font-family: "Rubik", sans-serif; /* Font consistency */
+    font-size: 14px;           /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+.new-cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.new-cart-item-img {
+    
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.new-cart-details {
+    flex-grow: 1;
+    overflow: hidden; /* Prevents text from overflowing */
+}
+
+.new-cart-title, .new-cart-price {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
+}
+
+.new-cart-remove-btn {
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.new-cart-remove-btn:hover {
+    background-color: #e53e3e; /* Darker shade for hover */
+  }
+
+.new-cart-total, .new-checkout-btn {
+    text-align: center;
+    width: 120px;
+}
+
+.new-checkout-btn {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Rubik", sans-serif;
+}
+
+.new-empty-cart-message {
+    color: #007BFF;
+    margin-top: 20px;
+    text-align: center; /* Ensure the text is centered */
+    width: auto; /* Adjust the width to auto */
+    padding: 10px; /* Optional: Add padding for better spacing */
+}
+
+#cart-content {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    max-width: 1000px; /* Adjust according to your layout */
+  }
+
+  .new-cart-title, .new-cart-price {
+    font-size: 16px; /* Example size */
+    color: #333; /* Example color */
+  }
+  
+
+  
+
+  .quality-section {
+    text-align: center;
+    font-size: 20px;
+    color: #001E63;
+    margin: auto;
+    width: 85%;
+    padding: 20px;
+    font-weight: 100;
+}
+
+  .quality-section p {
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    
+    color:#001E63;
+    padding-top: 5px;
+    padding-left: 28px;
+    width: 95%;
+
+  }
+
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    color: #001E63;
+    align-items: center;
+}
+
+
+.section {
+    background-color: #f9f9f9;
+    margin: 10px;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.section h2 {
+    color: #001E63;
+    font-size: 20px;
+}
+
+.section p {
+    font-size: 16px;
+    color: #001E63;
+    line-height: 1.6;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Rubik", sans-serif;
+}
+
+.learn-more:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.background {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    padding-top: 30px;
+
+}
+
+
+.background-careers {
+    width: 100%;
+    height: 500px; /* New fixed height for a slimmer appearance */
+    text-align: center;
+    padding-top: 30px;
+    overflow: hidden; /* Adds overflow handling to prevent extra space */
+}
+
+
+.logobackground {
+    text-align: center;
+    padding: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        /* Stack the h2 and ul vertically */
+        width: 100%;
+        /* Adjust based on how much space you want each section to take */
+        padding-top: 15px;
+        padding-right: 10px;
+    }
+
+    .footer-section h2 {
+        margin-bottom: 10px;
+        /* Add space between the h2 and ul */
+        color: #f2f5f9;
+        font-size: 14px;
+      }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+      }
+
+      .footer-section ul li a {
+        color: #cccccc;
+        text-decoration: none;
+        line-height: 1.5;
+        display: block;
+        font-size: 9px;
+      }
+
+    .footer-top {
+        display: flex;
+        width: 100%;
+        height: 150px;
+        background-color: #F2F5F9;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-bottom {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* Align items at the start of the flex container */
+        padding: 0 20px;
+        height: 175px;
+        background-color: #09111D;
+        color: white;
+
+
+    }
+
+    .footer-section-slogan {
+        display: inline-block;
+        width: 25%;
+        padding-left: 1px;
+        padding-right: 15px;
+        font-size: 14px;
+        padding-bottom: 5px;
+    }
+
+    quality-section {
+        display: flex;
+        font-size: 20px;
+        color: #001E63;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left: auto;  /* Ensures the left margin pushes the element to center */
+        margin-right: auto;  /* Ensures the right margin pushes the element to center */
+        width: 95%;  /* Adjust this to suit your design */
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;  /* Centers vertically inside the flex container */
+    }
+    
+    .quality-section p {
+        text-align: center;  /* Ensures text inside paragraphs is centered */
+        font-family: "Rubik", sans-serif;
+        color: #001E63;
+        margin-left: auto;  /* Ensures the left margin pushes the element to center */
+        margin-right: auto;
+        width: 80%;
+    }
+}
+
+/* Ensuring Quality section is centered */
+.quality-section {
+    text-align: center;
+    width: 100%; /* Use full container width */
+    margin: auto; /* Auto margins for automatic centering */
+    padding: 20px;
+}
+
+/* Increasing font sizes for smaller screens */
+@media (max-width: 480px) {
+    .heading-primary-main {
+        font-size: 35px; /* Smaller font size for smaller screens */
+    }
+
+    .heading-primary-sub {
+        font-size: 18px;
+    }
+}
+
+.header {
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    color: #001E63;
+    font-size: 24px;
+    color: #eee;
+
+    height: 75vh; /* Reduced from 100vh to 75vh */
+    background-image: 
+    linear-gradient(to right bottom, #007BFF, #001E63);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 45vh, 0 100%); /* Adjusted third point */
+}
+
+
+
+
+
+.text-box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    margin-bottom: 30px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    
+    font-size: 45px;
+    
+    color: #eee;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+  font-size: 14px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+    <title>Feedback</title>
+  </head>
+  <body>
+    <div
+      id="feedback-modal"
+      class="feedback-modal"
+      style="display: none;">
+      <div class="feedback-page-wrapper">
+        <span class="feedback-close-btn">&times;</span>
+        <div class="feedback-page-title">Rate your experience</div>
+        <div class="feedback-page-content">We highly value your feedback! Kindly take a moment to rate your experience and provide us with your valuable feedback.</div>
+        <div class="feedback-page-rate-box">
+          {% for i in (0..4) %}
+            <input
+              type="radio"
+              name="feedback-page-star"
+              id="feedback-page-star{{ i }}">
+            <label class="feedback-page-star" for="feedback-page-star{{ i }}"></label>
+          {% endfor %}
+        </div>
+        <textarea
+          class="feedback-page-textarea"
+          cols="30"
+          rows="6"
+          placeholder="Tell us about your experience!"
+          required></textarea>
+        <div class="feedback-page-submit-btn">Send</div>
+      </div>
+    </div>
+    <script src="{{ 'main.js' | asset_url }}" defer></script>
+  </body>
+</html>

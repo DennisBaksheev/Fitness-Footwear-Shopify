@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+  </head>
+  <body>
+    <div class="page-title">
+      {% if search.terms %}
+        <h1>Search Results for "{{ search.terms }}"</h1>
+      {% else %}
+        <h1>Search Results</h1>
+      {% endif %}
+    </div>
+
+    <!-- Products -->
+    <div class="item-container">
+      {% for product in search.results %}
+        <div class="item">
+          <h3 class="product-title">{{ product.title }}</h3>
+          <img
+            src="{{ product.featured_image | img_url: 'medium' }}"
+            alt="{{ product.title }}"
+            class="product-image"
+            width="200px"
+            height="170px">
+          <p class="product-price">{{ product.price | money_with_currency }}</p>
+          <select class="product-size">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }}</option>
+            {% endfor %}
+          </select>
+
+
+          <button class="add-to-cart-btn" onclick="addToCart({{ product.variants.first.id }}, 1)">Add to Cart</button>
+
+        </div>
+      {% endfor %}
+    </div>
+    <div id="feedbackButtonContainer" style="position: fixed; right: 0; bottom: 20%; z-index: 999;">
+      <button id="feedbackButton" style="transform: rotate(90deg); transform-origin: right top; background-color: #007BFF; color: white; border: none; cursor: pointer; padding: 10px 20px; border-radius: 5px;">
+        Feedback
+      </button>
+    </div>
+    <div id="feedbackButtonContainer" style="position: fixed; right: 0; bottom: 20%; z-index: 999;">
+      <button onclick="openFeedbackModal()" style="transform: rotate(90deg); transform-origin: right top; background-color: #007BFF; color: white; border: none; cursor: pointer; padding: 10px 20px; border-radius: 5px; text-align: center; display: block;">
+        Feedback
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+    
+  </head>
+  <body>
+
+    <div
+    id="add-to-cart-modal"
+    class="modal"
+    style="display: none;">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-header">
+        
+        <h2>1 Item Added to Cart</h2>
+        </div>
+        <div class="modal-body">
+        <img
+            src=""
+            alt="Product Image"
+            id="modal-product-image"
+            style="width: 80px; height: 80px; object-fit: cover;">
+        <p id="modal-product-title">Product Title</p>
+        <p id="modal-product-size">Size: Product Size</p>
+        </div>
+        <div class="modal-footer">
+        <button onclick="window.location.href='/cart'">Continue to Cart</button>
+        <button onclick="document.getElementById('add-to-cart-modal').style.display='none'">Continue Shopping</button>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
