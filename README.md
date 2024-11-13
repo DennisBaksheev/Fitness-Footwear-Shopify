@@ -31,7 +31,7 @@ cd Fitness-Footwear-Shopify
 You can view the live demo of the website here. The website is protected and requires the following credentials for access:
 
 - URL: [https://mvp-vault.myshopify.com/?_ab=0&_fd=0&_sc=1]
-- Password: redkyrpton
+- Password: redkrypton
 
 ## Contributing
 Contributions to the project are welcome! Please fork the repository and submit a pull request with your suggested changes.
